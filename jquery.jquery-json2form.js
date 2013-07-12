@@ -41,8 +41,15 @@
             // handle single select scenario
             $elSelect.val(val);
         }
+        
+         // handle textarea fields
+        var $elTextarea = frm.find($('textarea[name="' + name + '"]'));
+        $elTextarea.val(val);
     };
-
+    
+   
+        
+    
     var handleVerboseFormJson = function (frm, data) {
         // reset form values from json object
         $.each(data, function (id, node) {
@@ -56,9 +63,9 @@
 
     var handleConciseFormJson = function (frm, data) {
         // reset form values from json object
-        $.each(data, function (name, value) {
-            console.log(value['key']);
-            fillForm(frm, value['key'], value['value']);
+        var result = $.parseJSON(data);
+       $.each(data,function (name, value) {
+            fillForm(frm, name, value);
         });
     };
 
