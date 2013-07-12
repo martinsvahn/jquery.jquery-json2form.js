@@ -1,10 +1,3 @@
-/*!
- * jQuery JSON-2-Form  Plugin v1.0.0
- * https://github.com/saurshaz/jquery-json2form
- *
- * Copyright 2013 Saurabh Sharma
- * Released under the MIT license
- */
 (function (factory) {
     if (typeof define === 'function' && define.amd) {
         // AMD. Register as anonymous module.
@@ -38,7 +31,7 @@
 
         if ((typeOfSelect) && (typeOfSelect === 'multiple')) {
             // handle multi select scenario
-            if (val != undefined && val instanceof Array) {
+            if (val !== undefined && val instanceof Array) {
                 //alert(val+' is an Array');   
                 $elSelect.val(val);
             } else {
@@ -63,9 +56,9 @@
 
     var handleConciseFormJson = function (frm, data) {
         // reset form values from json object
-        $.each(data, function (idx, node) {
-            alert(node.name + '=' + node.value);
-            fillForm(frm, node.name, node.value);
+        $.each(data, function (name, value) {
+            console.log(value['key']);
+            fillForm(frm, value['key'], value['value']);
         });
     };
 
