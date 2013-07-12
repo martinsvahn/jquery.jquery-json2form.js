@@ -23,14 +23,11 @@ or
 {name: "Country", value: "UK"}]
 
 
-{"Country": ["USA", "UK"]}
+{"Country": ["USA", "UK"], "name" : "saurshaz"}
 
 or
 
-[{"Country": "USA"},
-{"Country":"UK"}]
+{"Country": "USA","Country":"UK"}
 
+http://jsfiddle.net/xGdLP/6/
 
-http://jsfiddle.net/saurshaz/xGdLP/4/ 
-
-This is a WIP
